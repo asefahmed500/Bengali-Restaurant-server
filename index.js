@@ -13,14 +13,8 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://resturant-client-theta.vercel.app',
-    'https://bengali-restaurant.web.app'
-  ],
-  credentials: true,
-}));
+
+app.use(cors())
 
 app.use(express.json());
 
