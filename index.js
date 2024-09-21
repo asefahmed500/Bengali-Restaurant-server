@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const Stripe = require('stripe');
+const logger = require('./logger');
 require('dotenv').config();
 
 // Initialize Stripe after environment variables are loaded
@@ -202,6 +203,8 @@ async function run() {
     });
 
     // Reviews API
+
+    
     app.get('/reviews', async (req, res) => {
       const result = await reviewsCollection.find().toArray();
       res.send(result);
